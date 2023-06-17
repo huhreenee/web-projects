@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> LGBT LIGHTS </title>
+    <style>
+        .center {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100%;
+        }
+        .center1 {
+            position: absolute;
+            top: 50%;
+            left:45%;
+        }
+        .block {
+            display: block;
+            width: 100%;
+            border: none;
+            background-color: white;
+            color: black;
+            padding: 14px 28px;
+            font-size: 16px;
+            cursor: pointer;
+            text-align: center;
+        }
+    </style>
+</head>
+<body onload="change_colors()" class="center1">
+    <script>
+        function getRandomArbitrary(min = 0, max = 255) {
+            return Math.round(Math.random() * (max - min) + min).toString(16);
+        }
+        function change_colors() {
+            append = '#'+getRandomArbitrary()+getRandomArbitrary()+getRandomArbitrary()
+            console.log(append);
+            document.getElementsByTagName("BODY")[0].style.backgroundColor = append;
+        }
+        function change_vibgyor() {
+            // const vibgyor = ['#ff0000','#ffa500','#ffff00','#008000','#0000ff','#4b0082','#ee82ee']
+            const vibgyor_colors = ['violet','indigo','blue','green','yellow','orange','red']
+            // vibgyor_color = vibgyor[Math.round(Math.random()*((vibgyor.length-1) - 0) + 0)]
+            vibgyor_color = vibgyor_colors[Math.round(Math.random()*((vibgyor_colors.length-1) - 0) + 0)]
+            console.log(vibgyor_color)
+            document.getElementsByTagName("BODY")[0].style.backgroundColor = vibgyor_color;
+            document.getElementById("vibgyor_button").innerText=vibgyor_color;
+        }
+        
+    </script>
+
+    <button id = "vibgyor_button" class = "block" onclick="change_vibgyor()"> Click me </button>
+</body>
+</html>
+
